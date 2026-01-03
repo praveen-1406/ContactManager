@@ -38,7 +38,7 @@ const ContactForm = ({ onContactAdded }) => {
         setSuccessMessage('');
 
         try {
-            await axios.post('http://localhost:5000/api/contacts', formData);
+            await axios.post(`${import.meta.env.VITE_BACKEND_URI}/api/contacts`, formData);
             setFormData({ name: '', email: '', phone: '', message: '' });
             onContactAdded();
             setSuccessMessage('Contact added successfully!');
